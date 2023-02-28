@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="faturamentos">
+
+
+</div>
+    
+  <script>
+const object = {
+    "faturamentos":[
+        {
+            "id":0,
+            "cidade":"São Paulo",
+            "faturamento":67836.43
+        },
+        {
+            "id":1,
+            "cidade":"Rio de Janeiro",
+            "faturamento":36678.66
+        },
+        {
+            "id":2,
+            "cidade":"Minas Gerais",
+            "faturamento":29229.88
+        },
+        {
+            "id":3,
+            "cidade":"Espírito Santo",
+            "faturamento":27165.48
+        },
+        {
+            "id":4,
+            "cidade":"Outros",
+            "faturamento":19849.53
+        }
+    ]
+}
+
+// O menor valor de faturamento ocorrido em um dia do mês;
+const menorValor = Math.min(...object.faturamentos.map(({
+  faturamento
+}) => faturamento));
+console.log('Menor valor', menorValor);
+const menoresValores = object.faturamentos.filter(({
+  faturamento
+}) => faturamento === menorValor);
+console.log('Menores', menoresValores);
+
+//O maior valor de faturamento ocorrido em um dia do mês;
+const maxValor = Math.max(...object.faturamentos.map(({
+  faturamento
+}) => faturamento));
+console.log('Maior valor', maxValor);
+const MaxiValores = object.faturamentos.filter(({
+  faturamento
+}) => faturamento === maxValor);
+console.log('Máximo', MaxiValores);
+
+//Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+
+const mediaMensal = object.faturamentos.reduce((total, valor) => total + valor) / object.length;
+
+// Contando o número de dias em que o faturamento foi superior à média mensal
+let diasAcimaDaMedia = 0;
+
+for (let i = 0; i < object.length; i++) {
+  if (object[i] > mediaMensal) {
+    diasAcimaDaMedia++;
+  }
+}
+console.log(`No mês atual, ${diasAcimaDaMedia} dias tiveram faturamento superior à média mensal.`);
+
+
+  </script>  
+</body>
+
+</html>

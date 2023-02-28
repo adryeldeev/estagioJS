@@ -1,0 +1,29 @@
+{
+    "faturamentos":[
+        {
+            "id":0,
+            "cidade":"São Paulo",
+            "faturamento":67836.43
+        },
+        {
+            "id":1,
+            "cidade":"Rio de Janeiro",
+            "faturamento":36678.66
+        },
+        {
+            "id":2,
+            "cidade":"Minas Gerais",
+            "faturamento":29229.88
+        },
+        {
+            "id":3,
+            "cidade":"Espírito Santo",
+            "faturamento":27165.48
+        },
+        {
+            "id":4,
+            "cidade":"Outros",
+            "faturamento":19849.53
+        }
+    ]
+}
